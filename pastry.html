@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular Pastry Tarts - Flowchart Recipe</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --prep-color: #FFDAB9;      /* Pastel Peach */
+            --spinach-color: #D4E7C5;   /* Pastel Mint Green */
+            --courgette-color: #FFF5BA; /* Pastel Yellow */
+            --aubergine-color: #E8C5E5; /* Pastel Lilac/Pink */
+            --bind-color: #D4F0F0;      /* Pastel Cyan/Blue */
+            --card-shadow: 0 8px 20px rgba(44, 62, 80, 0.06);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .recipe-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 750px;
+            position: relative;
+        }
+
+        .node {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+        }
+
+        .node h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .node li {
+            margin-bottom: 6px;
+        }
+
+        /* Node Specific Pastel Backgrounds */
+        .node.prep { background-color: var(--prep-color); }
+        .node.bind { background-color: var(--bind-color); }
+        .node.finish { background-color: var(--spinach-color); }
+
+        /* Triple Parallel Layout for Fillings */
+        .parallel-container {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 24px;
+        }
+
+        .parallel-branch {
+            flex: 1;
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 16px;
+            box-shadow: var(--card-shadow);
+            box-sizing: border-box;
+        }
+
+        .parallel-branch.branch-1 { background-color: var(--spinach-color); }
+        .parallel-branch.branch-2 { background-color: var(--courgette-color); }
+        .parallel-branch.branch-3 { background-color: var(--aubergine-color); }
+
+        .parallel-branch h4 {
+            margin-top: 0;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .parallel-branch ul {
+            padding-left: 15px;
+            margin: 0;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .parallel-branch li {
+            margin-bottom: 4px;
+        }
+
+        /* Connecting Arrows */
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 14px solid #D5DBDB;
+            margin: 4px 0 20px 0;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 700px) {
+            .parallel-container {
+                flex-direction: column;
+            }
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-header">
+        <h1>Modular Pastry Tarts</h1>
+        <p>Prerolled puff or shortcrust pastry meets seasonal veggie fillings, rich eggs, and melted cheese.</p>
+    </div>
+
+    <div class="flowchart-container">
+        
+        <!-- Step 1: Base & Pan Prep -->
+        <div class="node prep">
+            <h3>🥧 1. Prepare the Pastry Base</h3>
+            <ul>
+                <li>Lay your choice of prerolled pastry (<strong>Puff</strong> or <strong>Shortcrust</strong>) into a ceramic or glass baking tray.</li>
+                <li>Poke the bottom thoroughly with a fork to prevent bubbling.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 2: Choose Your Filling (3 Branches) -->
+        <div class="parallel-container">
+            
+            <div class="parallel-branch branch-1">
+                <h4>🌿 Spinach & Feta</h4>
+                <ul>
+                    <li>Wither ~600g spinach with 2 tbsp water, 1 tbsp oil, and optional garlic.</li>
+                    <li>Remove excess liquid. Pair with Puff Pastry & feta.</li>
+                </ul>
+            </div>
+
+            <div class="parallel-branch branch-2">
+                <h4>🥒 Curry Courgette</h4>
+                <ul>
+                    <li>Mandoline-slice or grate shallots and courgettes.</li>
+                    <li>Sauté until soft with curry powder. <em>(Optional: add cheese of choice)</em>. Pair with Puff Pastry.</li>
+                </ul>
+            </div>
+
+            <div class="parallel-branch branch-3">
+                <h4>🍆 Aubergine & Tomato</h4>
+                <ul>
+                    <li>Dice aubergine, cook high heat for 5 mins.</li>
+                    <li>Add oil, garlic, tomato paste and/or plum tomatoes, and basil. Pair with Shortcrust & feta/provolone/halloumi.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 3: Bind & Fill -->
+        <div class="node bind">
+            <h3>🥚 3. Bind & Assemble</h3>
+            <ul>
+                <li>Remove your cooked vegetable filling from the heat source.</li>
+                <li>Stir in <strong>1 to 2 eggs</strong>, your optional cheese of choice, and a handful of grated parmesan.</li>
+                <li>Pour and spread the mixture evenly over your poked pastry base.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 4: Bake & Serve -->
+        <div class="node finish">
+            <h3>🔥 4. Bake & Enjoy</h3>
+            <ul>
+                <li>Bake in a static oven at **200°C** for **25 to 35 minutes** until the crust is deeply golden and puffed.</li>
+                <li>Let cool slightly before slicing. Enjoy!</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

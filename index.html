@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowchart Kitchen - Menu</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --card-shadow: 0 10px 25px rgba(44, 62, 80, 0.08);
+            --border-radius: 20px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Carousel Wrapper */
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            width: 100%;
+            padding: 20px 10px;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
+        }
+
+        /* Recipe Card Styling */
+        .recipe-card {
+            flex: 0 0 300px;
+            scroll-snap-align: center;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(44, 62, 80, 0.12);
+        }
+
+        /* Unique Pastel Card Themes */
+        .card-1 { background-color: #FFDAB9; /* Peach */ }
+        .card-2 { background-color: #FFF5BA; /* Butter Yellow */ }
+        .card-3 { background-color: #E8C5E5; /* Lilac */ }
+        .card-4 { background-color: #D4F0F0; /* Soft Cyan */ }
+        .card-5 { background-color: #D4E7C5; /* Mint Green */ }
+        .card-6 { background-color: #F8D7DA; /* Soft Pink */ }
+        .card-7 { background-color: #FFF3CD; /* Warm Cream Yellow */ }
+        .card-8 { background-color: #D1ECF1; /* Soft Ice Blue */ }
+
+        .recipe-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .recipe-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+        }
+
+        .recipe-card p {
+            margin: 0 0 20px 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .recipe-btn {
+            background: #fff;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .recipe-btn:hover {
+            background: var(--text-color);
+            color: #fff;
+            transform: scale(1.02);
+        }
+
+        /* Carousel Navigation Buttons */
+        .carousel-btn {
+            background: #fff;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: var(--card-shadow);
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+        .btn-prev { left: -20px; }
+        .btn-next { right: -20px; }
+
+        @media (max-width: 768px) {
+            .carousel-btn { display: none; } /* Use swipe on mobile */
+            .recipe-card { flex: 0 0 85%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Flowchart Kitchen</h1>
+        <p>Explore easy, beautiful, and modular weeknight recipes mapped out visually.</p>
+    </header>
+
+    <div class="carousel-wrapper">
+        <button class="carousel-btn btn-prev" onclick="scrollCarousel(-1)">&#10094;</button>
+        
+        <div class="carousel-container" id="carousel">
+            
+            <!-- Card 1: Velouté -->
+            <div class="recipe-card card-1">
+                <div>
+                    <div class="icon">🥣</div>
+                    <h3>Butternut Velouté</h3>
+                    <p>A silky, comforting squash and potato soup with a crispy crouton option and portion planner.</p>
+                </div>
+                <a href="butternut_squash_velout_recipe_flowchart.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+            <!-- Card 2: Lasagna -->
+            <div class="recipe-card card-2">
+                <div>
+                    <div class="icon">🍝</div>
+                    <h3>Lasagna alla Bolognese</h3>
+                    <p>Rich beef & pork ragù, silky nutmeg béchamel, and zero pre-cooking stress.</p>
+                </div>
+                <a href="lasagna_bolognese.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+            <!-- Card 3: Risotto -->
+            <div class="recipe-card card-3">
+                <div>
+                    <div class="icon">⏱️</div>
+                    <h3>Pressure Cooker Risotto</h3>
+                    <p>6-minute foolproof risotto with modular bases (courgette or squash) and gourmet finishes.</p>
+                </div>
+                <a href="risotto.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+            <!-- Card 4: Tarts -->
+            <div class="recipe-card card-4">
+                <div>
+                    <div class="icon">🥧</div>
+                    <h3>Modular Pastry Tarts</h3>
+                    <p>Prerolled puff or shortcrust pastry paired with seasonal greens, curries, and melted cheese.</p>
+                </div>
+                <a href="pastry.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+            <!-- Card 5: Lentil Soup -->
+            <div class="recipe-card card-5">
+                <div>
+                    <div class="icon">🌿</div>
+                    <h3>Green Lentil Soup</h3>
+                    <p>A warm spice-bloomed pressure cooker soup finished with a rich crude olive oil drizzle.</p>
+                </div>
+                <a href="lentils.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+            <!-- Card 6: Curry -->
+            <div class="recipe-card card-6">
+                <div>
+                    <div class="icon">🍛</div>
+                    <h3>Cauliflower Curry</h3>
+                    <p>Roasted turmeric cauliflower and chickpeas in a creamy coconut curry sauce with rice.</p>
+                </div>
+                <a href="curry.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+            <!-- Card 7: Guinness Cake -->
+            <div class="recipe-card card-7">
+                <div>
+                    <div class="icon">🍻</div>
+                    <h3>Guinness Cake</h3>
+                    <p>Decadent, moist chocolate stout cake topped with a rich cream cheese and whipped cream frosting.</p>
+                </div>
+                <a href="guinness_cake.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+            <!-- Card 8: Muffins -->
+            <div class="recipe-card card-8">
+                <div>
+                    <div class="icon">🧁</div>
+                    <h3>Banana Chocolate Muffins</h3>
+                    <p>Quick, fluffy banana-infused muffins packed with chocolate chunks.</p>
+                </div>
+                <a href="muffins.html" class="recipe-btn">View Flowchart</a>
+            </div>
+
+        </div>
+
+        <button class="carousel-btn btn-next" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+
+    <script>
+        function scrollCarousel(direction) {
+            const container = document.getElementById('carousel');
+            const scrollAmount = 320; // Width of card + gap
+            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

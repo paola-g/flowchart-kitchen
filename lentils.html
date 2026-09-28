@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Lentil Soup - Flowchart Recipe</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --prep-color: #FFDAB9;      /* Pastel Peach */
+            --cook-color: #FFF5BA;      /* Pastel Yellow */
+            --pressure-color: #E8C5E5;  /* Pastel Lilac/Pink */
+            --finish-color: #D4E7C5;    /* Pastel Mint Green */
+            --card-shadow: 0 8px 20px rgba(44, 62, 80, 0.06);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .recipe-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .node {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+        }
+
+        .node h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .node li {
+            margin-bottom: 6px;
+        }
+
+        /* Node Specific Pastel Backgrounds */
+        .node.prep { background-color: var(--prep-color); }
+        .node.cook { background-color: var(--cook-color); }
+        .node.pressure { background-color: var(--pressure-color); }
+        .node.finish { background-color: var(--finish-color); }
+
+        /* Connecting Arrows */
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 14px solid #D5DBDB;
+            margin: 4px 0 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-header">
+        <h1>Pressure Cooker Green Lentil Soup</h1>
+        <p>A warming, spice-bloomed bowl of comfort featuring tender lentils, aromatic veg, and a final drizzle of raw olive oil.</p>
+    </div>
+
+    <div class="flowchart-container">
+        
+        <!-- Step 1: Aromatics & Spice Bloom -->
+        <div class="node prep">
+            <h3>🧅 1. Aromatics & Bloom Spices</h3>
+            <ul>
+                <li>Finely chop <strong>1 small onion, 1 carrot, and 2 celery sticks</strong>.</li>
+                <li>Soften the vegetables in olive oil directly in the pressure cooker.</li>
+                <li>Add a spoonful of <strong>tomato paste</strong>, then toss in <strong>curry powder</strong> and let it bloom briefly in the oil.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 2: Lentils & Water -->
+        <div class="node cook">
+            <h3>🥣 2. Coat Lentils & Add Water</h3>
+            <ul>
+                <li>Add your green lentils to the pot and mix thoroughly with the spiced vegetable base.</li>
+                <li>Pour in <strong>2 liters of water</strong> and drop in an optional stock cube.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 3: Pressure Cook -->
+        <div class="node pressure">
+            <h3>⏱️ 3. Pressure Cook (15 Minutes)</h3>
+            <ul>
+                <li>Close the pressure cooker lid, turn heat to high until pressure builds, then cook for <strong>15 minutes</strong>.</li>
+                <li>Turn off the heat and release the steam completely before opening.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 4: Finish & Serve -->
+        <div class="node finish">
+            <h3>🌿 4. Serve & Drizzle</h3>
+            <ul>
+                <li>Ladle the hot, fragrant soup into bowls.</li>
+                <li><strong>The Signature Touch:</strong> Drizzle generously with crude, raw extra virgin olive oil just before eating. Enjoy!</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

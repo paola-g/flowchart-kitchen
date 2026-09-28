@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Chocolate Muffins - Flowchart Recipe</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --prep-color: #FFDAB9;      /* Pastel Peach */
+            --batter-color: #FFF5BA;    /* Pastel Yellow */
+            --bake-color: #E8C5E5;      /* Pastel Lilac/Pink */
+            --finish-color: #D4E7C5;    /* Pastel Mint Green */
+            --card-shadow: 0 8px 20px rgba(44, 62, 80, 0.06);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .recipe-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .node {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+        }
+
+        .node h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .node li {
+            margin-bottom: 6px;
+        }
+
+        /* Node Specific Pastel Backgrounds */
+        .node.prep { background-color: var(--prep-color); }
+        .node.batter { background-color: var(--batter-color); }
+        .node.bake { background-color: var(--bake-color); }
+        .node.finish { background-color: var(--finish-color); }
+
+        /* Connecting Arrows */
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 14px solid #D5DBDB;
+            margin: 4px 0 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-header">
+        <h1>Banana Chocolate Muffins</h1>
+        <p>Quick, fluffy, and sweet muffins (makes 10–12) loaded with chocolate chunks and natural banana flavor.</p>
+    </div>
+
+    <div class="flowchart-container">
+        
+        <!-- Step 1: Prep Wet & Dry -->
+        <div class="node prep">
+            <h3>🍌 1. Prep Wet & Dry Ingredients</h3>
+            <ul>
+                <li><strong>Dry:</strong> Mix 180g flour, 100g sugar, ½ packet baking powder (~8g), and 50g chopped chocolate.</li>
+                <li><strong>Wet:</strong> Melt 80g butter. Whisk 2 eggs together with 5 tablespoons of banana syrup (or blended banana).</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 2: Combine -->
+        <div class="node batter">
+            <h3>🥣 2. Combine & Fold</h3>
+            <ul>
+                <li>Pour the wet ingredients (melted butter, eggs, banana) into your dry bowl.</li>
+                <li>Stir gently just until incorporated (do not overmix!), folding in the chocolate pieces.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 3: Bake -->
+        <div class="node bake">
+            <h3>⏱️ 3. Bake (22 Minutes)</h3>
+            <ul>
+                <li>Spoon the batter evenly into 10–12 muffin cups or paper liners.</li>
+                <li>Bake in a static oven at **180°C for 22 minutes** until golden and risen.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 4: Finish -->
+        <div class="node finish">
+            <h3>✨ 4. Cool & Serve</h3>
+            <ul>
+                <li>Let cool slightly on a wire rack before serving. Enjoy your fresh homemade muffins!</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lasagna alla Bolognese - Flowchart Recipe</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --prep-color: #FFDAB9;      /* Pastel Peach */
+            --ragu-color: #FFF5BA;      /* Pastel Yellow */
+            --bechamel-color: #E8C5E5;  /* Pastel Lilac/Pink */
+            --assembly-color: #D4F0F0;  /* Pastel Soft Cyan/Blue */
+            --finish-color: #D4E7C5;    /* Pastel Mint Green */
+            --card-shadow: 0 8px 20px rgba(44, 62, 80, 0.06);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .recipe-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .node {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+        }
+
+        .node h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .node li {
+            margin-bottom: 6px;
+        }
+
+        .node p {
+            margin: 0 0 10px 0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* Node Specific Pastel Backgrounds */
+        .node.prep { background-color: var(--prep-color); }
+        .node.ragu { background-color: var(--ragu-color); }
+        .node.bechamel { background-color: var(--bechamel-color); }
+        .node.assembly { background-color: var(--assembly-color); }
+        .node.finish { background-color: var(--finish-color); }
+
+        /* Parallel Split Layout */
+        .parallel-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 24px;
+        }
+
+        .parallel-branch {
+            flex: 1;
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+            box-sizing: border-box;
+        }
+
+        .parallel-branch.ragu-branch { background-color: var(--ragu-color); }
+        .parallel-branch.bechamel-branch { background-color: var(--bechamel-color); }
+
+        .parallel-branch h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .parallel-branch ul {
+            padding-left: 18px;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .parallel-branch li {
+            margin-bottom: 6px;
+        }
+
+        /* Connecting Arrows */
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 14px solid #D5DBDB;
+            margin: 4px 0 20px 0;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 600px) {
+            .parallel-container {
+                flex-direction: column;
+            }
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-header">
+        <h1>Lasagna alla Bolognese</h1>
+        <p>A straightforward, comforting classic with rich ragù, smooth nutmeg béchamel, and zero pre-cooking stress.</p>
+    </div>
+
+    <div class="flowchart-container">
+        
+        <!-- Step 1: Prep -->
+        <div class="node prep">
+            <h3>🔪 1. The Prep Work</h3>
+            <ul>
+                <li><strong>Aromatics:</strong> Finely chop 1 onion, 1 large carrot, 2 celery sticks. Peel 1 garlic clove (remove the "garlic soul" sprout). Chop a few fresh basil leaves.</li>
+                <li><strong>The Meats:</strong> 400g beef mince + 200g pork mince (the pork fat is essential for flavor!).</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 2 & 3: Parallel Branches (Ragù & Béchamel) -->
+        <div class="parallel-container">
+            
+            <!-- Left Branch: Ragù -->
+            <div class="parallel-branch ragu-branch">
+                <h3>🍅 The Ragù Path</h3>
+                <ul>
+                    <li>Sauté garlic in extra virgin olive oil until fragrant.</li>
+                    <li>Add onions until soft, then add carrots, celery, and a pinch of salt. Let moisture evaporate.</li>
+                    <li>Add beef & pork mince, break up with a spatula and brown. <em>(Optional: deglaze with white wine)</em>. Stir in optional tomato paste.</li>
+                    <li>Pour in 700ml tomato sauce (rinse bottle with water and add that too), stock cube, and basil.</li>
+                    <li>Simmer low & slow for <strong>45 mins to 1 hour</strong>. Keep it slightly liquid so dry sheets absorb it!</li>
+                </ul>
+            </div>
+
+            <!-- Right Branch: Béchamel -->
+            <div class="parallel-branch bechamel-branch">
+                <h3>🥛 The Béchamel Path</h3>
+                <ul>
+                    <li>Warm 500ml milk in the microwave; season with salt, pepper, and ground nutmeg.</li>
+                    <li>Melt 50g butter in a saucepan, remove from heat, add 50g flour all at once, and whisk into a smooth dough ball.</li>
+                    <li>Return to heat until golden and nutty, then gradually whisk in the warm milk bit by bit to avoid lumps.</li>
+                    <li>Cook until thick, smooth, and creamy.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 4: Assembly -->
+        <div class="node assembly">
+            <h3>🏗️ 3. The Assembly Node</h3>
+            <ul>
+                <li><strong>Base:</strong> Spread a thin layer of just sauce at the bottom of your baking dish.</li>
+                <li><strong>Layering Sequence:</strong> Repeat layers of <em>lasagna sheets</em> (no pre-cooking needed, egg pasta preferred) ➔ <em>Ragù</em> ➔ <em>Béchamel</em> ➔ <em>Parmesan</em>.</li>
+                <li><strong>Pro Tip:</strong> Choose your style (many thin layers or 4 rich, deep layers), but make sure no corners or edges of pasta are left dry! Finish top layer with extra béchamel and parmesan.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 5: Finish -->
+        <div class="node finish">
+            <h3>🔥 4. Bake & Rest (Enjoy!)</h3>
+            <ul>
+                <li><strong>Bake:</strong> Cook at <strong>180°C fan oven</strong> for about 30 minutes (follow box instructions for your specific sheets).</li>
+                <li><strong>Crucial Step:</strong> Let rest for <strong>10–15 minutes</strong> before cutting so the layers set properly. Serve and enjoy!</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

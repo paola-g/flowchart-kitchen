@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guinness Cake - Flowchart Recipe</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --prep-color: #FFDAB9;      /* Pastel Peach */
+            --batter-color: #FFF5BA;    /* Pastel Yellow */
+            --bake-color: #E8C5E5;      /* Pastel Lilac/Pink */
+            --frost-color: #D4F0F0;     /* Pastel Cyan/Blue */
+            --finish-color: #D4E7C5;    /* Pastel Mint Green */
+            --card-shadow: 0 8px 20px rgba(44, 62, 80, 0.06);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .recipe-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 750px;
+            position: relative;
+        }
+
+        .node {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+        }
+
+        .node h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .node li {
+            margin-bottom: 6px;
+        }
+
+        /* Node Specific Pastel Backgrounds */
+        .node.prep { background-color: var(--prep-color); }
+        .node.batter { background-color: var(--batter-color); }
+        .node.finish { background-color: var(--finish-color); }
+
+        /* Parallel Split Layout for Baking & Frosting */
+        .parallel-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 24px;
+        }
+
+        .parallel-branch {
+            flex: 1;
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 18px;
+            box-shadow: var(--card-shadow);
+            box-sizing: border-box;
+        }
+
+        .parallel-branch.branch-bake { background-color: var(--bake-color); }
+        .parallel-branch.branch-frost { background-color: var(--frost-color); }
+
+        .parallel-branch h4 {
+            margin-top: 0;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .parallel-branch ul {
+            padding-left: 16px;
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .parallel-branch li {
+            margin-bottom: 4px;
+        }
+
+        /* Connecting Arrows */
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 14px solid #D5DBDB;
+            margin: 4px 0 20px 0;
+        }
+
+        @media (max-width: 700px) {
+            .parallel-container {
+                flex-direction: column;
+            }
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-header">
+        <h1>Guinness Cake with Cream Cheese Frosting</h1>
+        <p>A decadent, moist chocolate cake infused with dark stout beer, topped with a fluffy cream cheese and whipped cream frosting.</p>
+    </div>
+
+    <div class="flowchart-container">
+        
+        <!-- Step 1: Prep & Whip Butter/Sugar -->
+        <div class="node prep">
+            <h3>🍺 1. Whip Base & Dry Ingredients</h3>
+            <ul>
+                <li>Whip <strong>250g room-temp butter</strong> with <strong>330g Muscovado sugar</strong> for 5 mins. Add 3 eggs one at a time.</li>
+                <li>Sift together <strong>250g flour, 100g cocoa powder, and 1/2 packet baking powder</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 2: Combine Batter -->
+        <div class="node batter">
+            <h3>🥣 2. Alternate Guinness & Flour</h3>
+            <ul>
+                <li>Add <strong>300ml Guinness beer</strong> to the butter mixture, alternating it with the sifted flour and cocoa.</li>
+                <li>Mix gently until smooth and fully incorporated.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 3: Parallel Branches (Bake & Frosting) -->
+        <div class="parallel-container">
+            
+            <div class="parallel-branch branch-bake">
+                <h4>🔥 Bake the Cake</h4>
+                <ul>
+                    <li>Pour batter into a <strong>24cm cake pan</strong>.</li>
+                    <li>Bake at <strong>150°C fan</strong> (or 180°C static) for ~<strong>50 minutes</strong>.</li>
+                    <li><em>Note: Cake stays naturally moist (keep in mind for toothpick test!). Cool completely.</em></li>
+                </ul>
+            </div>
+
+            <div class="parallel-branch branch-frost">
+                <h4>🥛 Make Frosting</h4>
+                <ul>
+                    <li>Blend <strong>350g Philadelphia</strong> with <strong>150g powdered sugar</strong> *(regular sugar works if blended together)*.</li>
+                    <li>Separately whip <strong>150ml heavy cream</strong>, then gently fold into the cream cheese mixture.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 4: Finish & Assemble -->
+        <div class="node finish">
+            <h3>✨ 3. Frost & Serve</h3>
+            <ul>
+                <li>Spread or pipe the rich cream cheese frosting over the cooled cake.</li>
+                <li><em>Pro Tip:</em> Can be prepared a day in advance. Slice and enjoy!</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

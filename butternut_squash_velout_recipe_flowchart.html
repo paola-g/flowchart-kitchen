@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butternut Squash Velouté - Flowchart Recipe</title>
+    <!-- Tailwind CSS for rapid, modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #2C3E50;
+        }
+        
+        .recipe-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom connector line styles */
+        .connector-v {
+            width: 4px;
+            background-color: #D1D5DB;
+            margin: 0 auto;
+        }
+
+        /* Hover effect for interactive feel */
+        .flow-node {
+            transition: all 0.3s ease;
+        }
+        .flow-node:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px -5px rgba(44, 62, 80, 0.1), 0 8px 10px -6px rgba(44, 62, 80, 0.1);
+        }
+    </style>
+</head>
+<body class="py-12 px-4 sm:px-6 lg:px-8">
+
+    <header class="max-w-4xl mx-auto text-center mb-12">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-[#FFDAB9] text-[#2C3E50] text-sm font-semibold tracking-wide uppercase mb-3 shadow-sm">
+            ✨ Interactive Flowchart Recipe
+        </span>
+        <h1 class="recipe-title text-4xl sm:text-5xl font-bold tracking-tight mb-4">Butternut Squash Velouté</h1>
+        <p class="text-lg text-[#2C3E50]/80 max-w-xl mx-auto">
+            A silky, comforting velvety soup mapped out step-by-step for a delightful cooking experience.
+        </p>
+    </header>
+
+    <main class="max-w-3xl mx-auto flex flex-col items-center">
+
+        <!-- NODE 1: PREP -->
+        <div class="flow-node w-full bg-[#FFDAB9] border-2 border-[#ffc999] rounded-2xl p-6 shadow-md relative">
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-md border border-[#ffc999]">
+                🔪
+            </div>
+            <div class="flex justify-between items-start mb-3">
+                <h2 class="text-xl font-bold text-[#2C3E50]">1. The Prep Phase</h2>
+                <span class="text-xs font-semibold bg-white/60 px-2.5 py-1 rounded-full text-[#2C3E50]">15 mins</span>
+            </div>
+            <ul class="space-y-2 text-sm sm:text-base text-[#2C3E50]">
+                <li class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[#2C3E50]"></span> Peel & dice <strong>1 butternut squash</strong>
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[#2C3E50]"></span> Peel & dice potatoes (weight = 1/2 of the squash)
+                </li>
+                <li class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[#2C3E50]"></span> Chop <strong>1/2 onion</strong> finely & mince parsley (save some garnish)
+                </li>
+            </ul>
+        </div>
+
+        <!-- CONNECTOR 1 -->
+        <div class="h-8 connector-v relative flex items-center justify-center">
+            <div class="absolute w-3 h-3 bg-gray-400 rounded-full bottom-0"></div>
+        </div>
+
+        <!-- NODE 2: SAUTE -->
+        <div class="flow-node w-full bg-[#FFF5BA] border-2 border-[#ffee96] rounded-2xl p-6 shadow-md relative">
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-md border border-[#ffee96]">
+                🍳
+            </div>
+            <div class="flex justify-between items-start mb-3">
+                <h2 class="text-xl font-bold text-[#2C3E50]">2. Sauté & Sweat</h2>
+                <span class="text-xs font-semibold bg-white/60 px-2.5 py-1 rounded-full text-[#2C3E50]">10 mins</span>
+            </div>
+            <p class="text-sm sm:text-base text-[#2C3E50] mb-3">
+                Brown the finely chopped onion in a deep saucepan with oil or butter over medium heat.
+            </p>
+            <div class="bg-white/50 p-3 rounded-xl text-sm border border-yellow-200">
+                🌱 <strong>Sweat veggies:</strong> Add diced potatoes, squash, and a pinch of salt. Cook with lid on for 5-10 minutes, stirring occasionally.
+            </div>
+        </div>
+
+        <!-- CONNECTOR 2 -->
+        <div class="h-8 connector-v relative flex items-center justify-center">
+            <div class="absolute w-3 h-3 bg-gray-400 rounded-full bottom-0"></div>
+        </div>
+
+        <!-- NODE 3: SIMMER -->
+        <div class="flow-node w-full bg-[#FFF5BA] border-2 border-[#ffee96] rounded-2xl p-6 shadow-md relative">
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-md border border-[#ffee96]">
+                🍲
+            </div>
+            <div class="flex justify-between items-start mb-3">
+                <h2 class="text-xl font-bold text-[#2C3E50]">3. Simmering</h2>
+                <span class="text-xs font-semibold bg-white/60 px-2.5 py-1 rounded-full text-[#2C3E50]">30 mins</span>
+            </div>
+            <p class="text-sm sm:text-base text-[#2C3E50] mb-3">
+                Pour in <strong>1 liter of hot vegetable broth</strong> (pro tip: warm water in the microwave and mix stock cube directly). Bring to a boil!
+            </p>
+            <div class="bg-white/50 p-3 rounded-xl text-sm border border-yellow-200">
+                🔥 Reduce heat, cover, and let simmer gently for 30 minutes until vegetables are completely tender.
+            </div>
+        </div>
+
+        <!-- CONNECTOR 3 -->
+        <div class="h-8 connector-v relative flex items-center justify-center">
+            <div class="absolute w-3 h-3 bg-gray-400 rounded-full bottom-0"></div>
+        </div>
+
+        <!-- NODE 4: FINISH -->
+        <div class="flow-node w-full bg-[#D4E7C5] border-2 border-[#bcdc9f] rounded-2xl p-6 shadow-md relative">
+            <div class="absolute -top-4 -left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-md border border-[#bcdc9f]">
+                ✨
+            </div>
+            <div class="flex justify-between items-start mb-3">
+                <h2 class="text-xl font-bold text-[#2C3E50]">4. Blend & Garnish</h2>
+                <span class="text-xs font-semibold bg-white/60 px-2.5 py-1 rounded-full text-[#2C3E50]">5 mins</span>
+            </div>
+            <p class="text-sm sm:text-base text-[#2C3E50]">
+                Blend everything smooth with an immersion blender. Stir in most of the chopped fresh parsley, keeping a pinch aside for serving decoration.
+            </p>
+        </div>
+
+        <!-- CONNECTOR SPLIT BRANCHES -->
+        <div class="w-full flex justify-center my-2">
+            <div class="w-48 h-6 border-b-2 border-l-2 border-r-2 border-gray-300 rounded-b-2xl"></div>
+        </div>
+
+        <!-- BRANCHES CONTAINER (Side-by-side or stacked on mobile) -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- BRANCH A: CROUTONS -->
+            <div class="flow-node bg-[#E8C5E5] border-2 border-[#d9a5d5] rounded-2xl p-6 shadow-md relative flex flex-col justify-between">
+                <div class="absolute -top-4 -left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-md border border-[#d9a5d5]">
+                    🥖
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#2C3E50] mb-2">Feeling Fancy? Upgrade!</h3>
+                    <p class="text-sm text-[#2C3E50] mb-4">
+                        Toss cubed bread with butter and toast in a hot pan or oven until crispy golden brown. Top your velvet bowl with homemade croutons!
+                    </p>
+                </div>
+                <span class="inline-block text-xs font-bold uppercase tracking-wider bg-white/60 px-3 py-1 rounded-full w-max text-[#2C3E50]">
+                    Optional Add-on
+                </span>
+            </div>
+
+            <!-- BRANCH B: PORTION PLANNER -->
+            <div class="flow-node bg-[#E8C5E5] border-2 border-[#d9a5d5] rounded-2xl p-6 shadow-md relative flex flex-col justify-between">
+                <div class="absolute -top-4 -left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl shadow-md border border-[#d9a5d5]">
+                    📦
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#2C3E50] mb-2">Portion Planner</h3>
+                    <ul class="text-sm text-[#2C3E50] space-y-1.5 mb-4">
+                        <li>👥 Feed 4 people right now</li>
+                        <li>🍲 Dinner + Lunch for 2 people</li>
+                        <li>❄️ 1 meal now + Freeze 3 portions</li>
+                    </ul>
+                </div>
+                <span class="inline-block text-xs font-bold uppercase tracking-wider bg-white/60 px-3 py-1 rounded-full w-max text-[#2C3E50]">
+                    Choose Your Path
+                </span>
+            </div>
+
+        </div>
+
+        <!-- FOOTER CALLOUT -->
+        <div class="mt-12 text-center bg-white border border-gray-200 rounded-2xl p-6 shadow-sm w-full">
+            <p class="text-lg font-medium text-[#2C3E50] mb-1">🍲 Enjoy your creamy creation!</p>
+            <p class="text-sm text-gray-500">Designed with soft pastels and clear flowchart steps for your culinary blog.</p>
+        </div>
+
+    </main>
+
+</body>
+</html>

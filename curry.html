@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cauliflower & Chickpea Curry - Flowchart Recipe</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --prep-color: #FFDAB9;      /* Pastel Peach */
+            --rice-color: #FFF5BA;      /* Pastel Yellow */
+            --cauli-color: #E8C5E5;     /* Pastel Lilac/Pink */
+            --sauce-color: #D4F0F0;     /* Pastel Cyan/Blue */
+            --finish-color: #D4E7C5;    /* Pastel Mint Green */
+            --card-shadow: 0 8px 20px rgba(44, 62, 80, 0.06);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .recipe-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 750px;
+            position: relative;
+        }
+
+        .node {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+        }
+
+        .node h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .node li {
+            margin-bottom: 6px;
+        }
+
+        /* Node Specific Pastel Backgrounds */
+        .node.prep { background-color: var(--prep-color); }
+        .node.sauce { background-color: var(--sauce-color); }
+        .node.finish { background-color: var(--finish-color); }
+
+        /* Parallel Split Layout for Rice & Cauliflower */
+        .parallel-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 24px;
+        }
+
+        .parallel-branch {
+            flex: 1;
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 18px;
+            box-shadow: var(--card-shadow);
+            box-sizing: border-box;
+        }
+
+        .parallel-branch.branch-rice { background-color: var(--rice-color); }
+        .parallel-branch.branch-cauli { background-color: var(--cauli-color); }
+
+        .parallel-branch h4 {
+            margin-top: 0;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .parallel-branch ul {
+            padding-left: 16px;
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .parallel-branch li {
+            margin-bottom: 4px;
+        }
+
+        /* Connecting Arrows */
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 14px solid #D5DBDB;
+            margin: 4px 0 20px 0;
+        }
+
+        @media (max-width: 700px) {
+            .parallel-container {
+                flex-direction: column;
+            }
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-header">
+        <h1>Cauliflower & Chickpea Curry</h1>
+        <p>Roasted turmeric cauliflower, protein-packed chickpeas, rich coconut curry sauce, and perfectly steamed rice.</p>
+    </div>
+
+    <div class="flowchart-container">
+        
+        <!-- Step 1: Soak & Spice Prep -->
+        <div class="node prep">
+            <h3>🥦 1. Soak & Prep Spices</h3>
+            <ul>
+                <li>Soak cauliflower in salted water for <strong>30 minutes</strong>, then drain.</li>
+                <li>Finely chop onion; mince garlic & ginger.</li>
+                <li><strong>Dry Spices:</strong> 2 tsp cumin, 2 tsp coriander, 1 tsp turmeric, ½ tsp chilli powder.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 2: Parallel Prep (Rice & Roasting) -->
+        <div class="parallel-container">
+            
+            <div class="parallel-branch branch-rice">
+                <h4>🍚 The Rice</h4>
+                <ul>
+                    <li>1 cup rice + 1.5 cups water.</li>
+                    <li>Simmer medium-high (no lid) until bubbly & foamy.</li>
+                    <li>Cover, cook medium-low for <strong>12 mins</strong>. Rest 10 mins off heat, then fluff.</li>
+                </ul>
+            </div>
+
+            <div class="parallel-branch branch-cauli">
+                <h4>🔥 Roasted Cauliflower</h4>
+                <ul>
+                    <li>Cut into florets & chop tender leaves.</li>
+                    <li>Toss with salt & 1 tsp turmeric.</li>
+                    <li>Roast at <strong>200–220°C for 20 mins</strong> (toss halfway through).</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 3: Curry Sauce Base -->
+        <div class="node sauce">
+            <h3>🍛 2. Build the Curry Sauce</h3>
+            <ul>
+                <li>Cook onions in oil for ~5 mins until translucent, then add ginger-garlic paste (cook 2 mins).</li>
+                <li>Add dry spices and cook until fragrant *(splash 50ml water if needed to prevent burning)*.</li>
+                <li>Stir in tomato paste and cook until the pan is dry.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 4: Simmer & Finish -->
+        <div class="node finish">
+            <h3>🥥 3. Simmer & Serve</h3>
+            <ul>
+                <li>Add roasted cauliflower and drained chickpeas; toss until coated in spices.</li>
+                <li>Sprinkle garam masala and pour in coconut milk. Simmer for <strong>15–20 minutes</strong> until reduced and tender.</li>
+                <li>*(Optional)* Stir in lemon juice and fresh coriander. Serve with your fluffy rice!</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

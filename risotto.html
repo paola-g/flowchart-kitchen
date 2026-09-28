@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure Cooker Risotto - Flowchart Recipe</title>
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #2C3E50;
+            --prep-color: #FFDAB9;      /* Pastel Peach */
+            --cook-color: #FFF5BA;      /* Pastel Yellow */
+            --pressure-color: #E8C5E5;  /* Pastel Lilac/Pink */
+            --gourmet-color: #D4F0F0;   /* Pastel Cyan/Blue */
+            --finish-color: #D4E7C5;    /* Pastel Mint Green */
+            --card-shadow: 0 8px 20px rgba(44, 62, 80, 0.06);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .recipe-header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .node {
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 24px;
+            position: relative;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .node:hover {
+            transform: translateY(-3px);
+        }
+
+        .node h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .node li {
+            margin-bottom: 6px;
+        }
+
+        /* Node Specific Pastel Backgrounds */
+        .node.prep { background-color: var(--prep-color); }
+        .node.cook { background-color: var(--cook-color); }
+        .node.pressure { background-color: var(--pressure-color); }
+        .node.gourmet { background-color: var(--gourmet-color); }
+        .node.finish { background-color: var(--finish-color); }
+
+        /* Parallel Split Layout for Gourmet Finishes */
+        .parallel-container {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 24px;
+        }
+
+        .parallel-branch {
+            flex: 1;
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 18px;
+            box-shadow: var(--card-shadow);
+            box-sizing: border-box;
+        }
+
+        .parallel-branch.branch-1 { background-color: var(--gourmet-color); }
+        .parallel-branch.branch-2 { background-color: var(--prep-color); }
+        .parallel-branch.branch-3 { background-color: var(--finish-color); }
+
+        .parallel-branch h4 {
+            margin-top: 0;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .parallel-branch ul {
+            padding-left: 16px;
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .parallel-branch li {
+            margin-bottom: 4px;
+        }
+
+        /* Connecting Arrows */
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 14px solid #D5DBDB;
+            margin: 4px 0 20px 0;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 650px) {
+            .parallel-container {
+                flex-direction: column;
+            }
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="recipe-header">
+        <h1>Pressure Cooker Risotto</h1>
+        <p>A lightning-fast, foolproof weeknight meal (serves 4) with modular vegetable bases and optional gourmet upgrades.</p>
+    </div>
+
+    <div class="flowchart-container">
+        
+        <!-- Step 1: Base Choice -->
+        <div class="node prep">
+            <h3>🌱 1. Choose Your Base</h3>
+            <ul>
+                <li><strong>Option A (Courgette):</strong> Grate courgettes directly into the pressure cooker.</li>
+                <li><strong>Option B (Butternut Squash):</strong> ~400g pre-diced squash + a pinch of chili flakes.</li>
+                <li><strong>Aromatics:</strong> Finely chop a small onion. Have <strong>250g Carnaroli rice</strong> ready.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 2: Sauté & Toast -->
+        <div class="node cook">
+            <h3>🍳 2. Soften & Toast</h3>
+            <ul>
+                <li>Heat olive oil in the pressure cooker and soften the finely chopped onion.</li>
+                <li>Add your chosen vegetable (courgette or squash/chili mix) and cook a few minutes until soft.</li>
+                <li>Add <strong>250g Carnaroli rice</strong> and toast for a few minutes while stirring.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 3: Pressure Cooker -->
+        <div class="node pressure">
+            <h3>⏱️ 3. Pressure Cook (6 Minutes)</h3>
+            <ul>
+                <li>Heat <strong>600ml water</strong> (kettle or microwave) and dissolve a stock cube directly in the cooker with the rice.</li>
+                <li>Close the pressure cooker lid, turn heat to high until pressure builds, then cook for **6 minutes**.</li>
+                <li>Turn off heat and release the steam completely before opening.</li>
+            </ul>
+        </div>
+
+        <div class="arrow-down"></div>
+
+        <!-- Step 4: Gourmet Branches -->
+        <div class="parallel-container">
+            
+            <div class="parallel-branch branch-1">
+                <h4>🧀 Classic Finish</h4>
+                <ul>
+                    <li>Stir in generous butter, grated parmesan, and fresh or frozen chopped parsley. Serve hot!</li>
+                </ul>
+            </div>
+
+            <div class="parallel-branch branch-2">
+                <h4>🦐 Courgette + Prawns</h4>
+                <ul>
+                    <li>Immediately after opening cooker (skip parmesan), stir in fresh prawns to gently poach in residual heat. Add butter & parsley.</li>
+                </ul>
+            </div>
+
+            <div class="parallel-branch branch-3">
+                <h4>🍄 Squash + Mushrooms</h4>
+                <ul>
+                    <li>Separately roast chopped mushrooms on high heat for 5 mins, toss with oil, garlic, & parsley. Fold into finished squash risotto!</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
